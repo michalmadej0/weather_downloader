@@ -30,7 +30,7 @@ def download_weather():
             writer.writerow({'key': key, 'value':value})
 
 
-schedule.every(3).seconds.do(download_weather)
+schedule.every(2).hours.do(download_weather)
 
 while True:
     schedule.run_pending()
