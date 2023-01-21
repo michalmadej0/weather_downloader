@@ -5,7 +5,6 @@ import csv
 from datetime import datetime
 
 def download_weather():
-    print('Ruszam')
     api_key = 'a3c8518113db5c7bc4513414babcb42c'
     lang = 'pl'
     units = 'metric'
@@ -29,7 +28,7 @@ def download_weather():
         for key, value in data.items():
             writer.writerow({'key': key, 'value':value})
 
-
+print("Start")
 schedule.every(3).hours.do(download_weather)
 
 while True:
