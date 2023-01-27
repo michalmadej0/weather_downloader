@@ -1,4 +1,3 @@
-import schedule
 import time
 import requests
 import csv
@@ -30,9 +29,5 @@ def download_weather():
             writer.writerow({'key': key, 'value':value})
 
 
-schedule.every(3).seconds.do(download_weather)
-
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+download_weather()
 
